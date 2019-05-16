@@ -1,3 +1,5 @@
+EN|[CN](README_cn.md)
+
 Presenter is deployed on the Linux server where Mind Studio is located to display the inference result.
 
 Presenter includes Presenter Server and Presenter Agent.
