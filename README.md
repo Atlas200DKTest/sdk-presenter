@@ -13,7 +13,7 @@ Presenter includes Presenter Server and Presenter Agent.
 
     Presenter Server is a software package that displays the result of face detection and inference. It is implemented based on Python 3.5 and uses the third-party web framework Tornado and underlying communication framework protobuf.
 
-    Presenter Server supports the image mode and video mode. In image mode, the image contains a single face. In video mode, consecutive images are displayed. Presenter Server marks different data sources based on channels. You can click  **Create**  in the browser to add channels and click** Delete **to delete channels. By default, two channels are supported, namely, image and video.
+    Presenter Server supports the image mode and video mode. In image mode, the image contains a single face. In video mode, consecutive images are displayed. Presenter Server marks different data sources based on channels. You can click  **Create**  in the browser to add channels and click **Delete** to delete channels. By default, two channels are supported, namely, image and video.
 
 -   **Sample Code**
 
