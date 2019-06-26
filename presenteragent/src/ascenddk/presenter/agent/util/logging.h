@@ -39,22 +39,22 @@
 
 
 // debug level logging
-#define AGENT_LOG_DEBUG(fmt, ...) \
-        HIAI_ENGINE_LOG(HIAI_DEBUG_INFO_CODE, \
-        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define AGENT_LOG_DEBUG(fmt, ...)                                      \
+  HIAI_ENGINE_LOG(HIAI_DEBUG_INFO_CODE, "[%s:%d] " fmt "\n", __FILE__, \
+                  __LINE__, ##__VA_ARGS__);
 
 // info level logging
 #define AGENT_LOG_INFO(fmt, ...) \
-        HIAI_ENGINE_LOG("[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+  HIAI_ENGINE_LOG("[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__);
 
 // warn level logging
-#define AGENT_LOG_WARN(fmt, ...) \
-        HIAI_ENGINE_LOG(HIAI_GRAPH_WARNING_CODE, \
-        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define AGENT_LOG_WARN(fmt, ...)                                          \
+  HIAI_ENGINE_LOG(HIAI_GRAPH_WARNING_CODE, "[%s:%d] " fmt "\n", __FILE__, \
+                  __LINE__, ##__VA_ARGS__);
 
 // error level logging
-#define AGENT_LOG_ERROR(fmt, ...) \
-        HIAI_ENGINE_LOG(HIAI_ENGINE_RUN_ARGS_NOT_RIGHT, \
-        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define AGENT_LOG_ERROR(fmt, ...)                                      \
+  HIAI_ENGINE_LOG(HIAI_ENGINE_RUN_ARGS_NOT_RIGHT, "[%s:%d] " fmt "\n", \
+                  __FILE__, __LINE__, ##__VA_ARGS__);
 
 #endif /* ASCENDDK_PRESENTER_AGENT_UTIL_LOGGING_H_ */
