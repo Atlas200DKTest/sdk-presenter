@@ -27,6 +27,7 @@ OUT_INC_DIR = $(OUT_DIR)/include
 INC_DIR := \
 	-I$(LOCAL_DIR) \
 	-I$(LOCAL_DIR)/include \
+	-I$(DDK_HOME)/include/inc \
 	-I$(LOCAL_DIR)/src \
 	-I$(DDK_HOME)/include/inc/custom \
 	-I$(DDK_HOME)/include/libc_sec/include \
@@ -48,6 +49,7 @@ CC_FLAGS := $(INC_DIR) -std=c++11 -Wall -fPIC -O2
 LNK_FLAGS := \
 	-Wl,-rpath-link=$(DDK_HOME)/host/lib/ \
 	-L$(DDK_HOME)/host/lib \
+	-lhiai_common \
 	-lprotobuf \
 	-shared
 

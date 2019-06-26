@@ -34,31 +34,27 @@
 #ifndef ASCENDDK_PRESENTER_AGENT_UTIL_LOGGING_H_
 #define ASCENDDK_PRESENTER_AGENT_UTIL_LOGGING_H_
 
-#include "toolchain/slog.h"
+#include "hiaiengine/log.h"
 #include "cerrno"
 
-// logging template
-#define AGENT_LOG(level, format, ...) \
-do { \
-    int error_no = errno; /* dlog may override errno */ \
-    dlog_##level(ASCENDDK, "[%s:%d] " format "\n", __FILE__, __LINE__, ##__VA_ARGS__); \
-    errno = error_no; /* restore errno */ \
-} while(0);
 
 // debug level logging
-#define AGENT_LOG_DEBUG(format, ...) \
-        AGENT_LOG(debug, format, ##__VA_ARGS__);
+#define AGENT_LOG_DEBUG(fmt, ...) \
+        HIAI_ENGINE_LOG(HIAI_DEBUG_INFO_CODE, \
+        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 
 // info level logging
-#define AGENT_LOG_INFO(format, ...) \
-        AGENT_LOG(info, format, ##__VA_ARGS__);
+#define AGENT_LOG_INFO(fmt, ...) \
+        HIAI_ENGINE_LOG("[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 
 // warn level logging
-#define AGENT_LOG_WARN(format, ...) \
-        AGENT_LOG(warn, format, ##__VA_ARGS__);
+#define AGENT_LOG_WARN(fmt, ...) \
+        HIAI_ENGINE_LOG(HIAI_GRAPH_WARNING_CODE, \
+        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 
 // error level logging
-#define AGENT_LOG_ERROR(format, ...) \
-        AGENT_LOG(error, format, ##__VA_ARGS__);
+#define AGENT_LOG_ERROR(fmt, ...) \
+        HIAI_ENGINE_LOG(HIAI_ENGINE_RUN_ARGS_NOT_RIGHT, \
+        "[%s:%d] " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 
 #endif /* ASCENDDK_PRESENTER_AGENT_UTIL_LOGGING_H_ */
