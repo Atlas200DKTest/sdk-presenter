@@ -2,6 +2,10 @@ ifndef DDK_HOME
 $(error "Can not find DDK_HOME env, please set it in environment!.")
 endif
 
+ifndef NPU_DEVICE_LIB
+$(error "Can not find NPU_DEVICE_LIB env, please set it in environment!.")
+endif
+
 ifeq ($(mode),)
 mode=AtlasDK
 endif
@@ -47,8 +51,8 @@ ALL_OBJS := $(OBJS) \
 CC_FLAGS := $(INC_DIR) -std=c++11 -Wall -fPIC -O2
 
 LNK_FLAGS := \
-	-Wl,-rpath-link=$(DDK_HOME)/host/lib/ \
-	-L$(DDK_HOME)/host/lib \
+	-Wl,-rpath-link=$(NPU_DEVICE_LIB) \
+	-L$(NPU_DEVICE_LIB) \
 	-lhiai_common \
 	-lprotobuf \
 	-shared
